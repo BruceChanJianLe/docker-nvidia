@@ -46,6 +46,31 @@ For more information, please visit the official [page](https://docs.nvidia.com/d
 
 The installation steps are tested and verified on the Ubuntu18.04.  
 
+**Step 1: Install docker**  
+Install docker, visit my [guide](https://github.com/BruceChanJianLe/docker-setup) or official [instructions](https://docs.docker.com/engine/install/).  
+
+**Step 2: Setup the `stable` repository and the GPG key**  
+```
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+```
+
+**Step 3: Install `nvidia-docker2` package**
+```
+sudo apt-get update
+
+sudo apt-get install -y nvidia-docker2
+```
+
+**Step 4: Restart the Docker daemon to complete the installation after setting the default runtime**  
+```
+sudo systemctl restart docker
+```
+
+
 
 ## References
 
