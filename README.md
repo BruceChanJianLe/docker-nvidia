@@ -87,6 +87,36 @@ Starting from Ubuntu16 you will be able to install Nvidia drivers through `Softw
 
 You could also always download from their official site [link](https://www.nvidia.com/Download/index.aspx?lang=en-us).  
 
+**Nvidia CUDA**  
+
+Ubuntu 16.04 LTS and Ubuntu 18.04 LTS distributions using the package manager.  
+```bash
+# Step 1
+# The NVIDIA driver requires that the kernel headers and development packages for the running version of the kernel be installed at the time of the driver installation, as well whenever the driver is rebuilt. For example, if your system is running kernel version 4.4.0, the 4.4.0 kernel headers and development packages must also be installed.
+sudo apt-get install linux-headers-$(uname -r)
+
+# Step 2
+# Ensure packages on the CUDA network repository have priority over the Canonical repository.
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID | sed -e 's/\.//g')
+wget https://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64/cuda-$distribution.pin
+sudo mv cuda-$distribution.pin /etc/apt/preferences.d/cuda-repository-pin-600
+
+# Step 3
+# Install the CUDA repository public GPG key. Note that on Ubuntu 16.04, replace https with http in the command below.
+sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64/7fa2af80.pub
+
+# Step 4
+# Setup the CUDA network repository.
+echo "deb http://developer.download.nvidia.com/compute/cuda/repos/$distribution/x86_64 /" | sudo tee /etc/apt/sources.list.d/cuda.list
+
+# Step 5
+# Update the APT repository cache and install the driver using the cuda-drivers meta-package. Use the --no-install-recommends option for a lean driver install without any dependencies on X packages. This is particularly useful for headless installations on cloud instances.
+sudo apt-get update
+sudo apt-get -y install cuda-drivers
+```
+
+- [link](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html)  
+
 ## References
 
 - nvidia videos [link1](https://www.youtube.com/watch?v=r3LrCnou1K4) [link2](https://youtu.be/iAavYF-XqTA) [link3](https://youtu.be/uM3Ii79KQ20)
