@@ -113,6 +113,11 @@ echo "deb http://developer.download.nvidia.com/compute/cuda/repos/$distribution/
 # Update the APT repository cache and install the driver using the cuda-drivers meta-package. Use the --no-install-recommends option for a lean driver install without any dependencies on X packages. This is particularly useful for headless installations on cloud instances.
 sudo apt-get update
 sudo apt-get -y install cuda-drivers
+
+# Step 6
+# Follow the post-installation steps in the CUDA Installation Guide for Linux to setup environment variables, NVIDIA persistence daemon (recommended) and to verify the successful installation of the driver.
+# https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions
+# But we can skip this step since we are using a docker container:D
 ```
 
 - [link](https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html)  
