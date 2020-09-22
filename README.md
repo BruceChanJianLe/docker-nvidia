@@ -82,6 +82,8 @@ Starting from Ubuntu16 you will be able to install Nvidia drivers through `Softw
 - [link1](https://ubuntuforums.org/showthread.php?t=2413765)
 - [link2](https://ubuntuforums.org/showthread.php?t=2397701&highlight=continue+manually+installed+driver)
 
+You could also always download from their official site [link](https://www.nvidia.com/Download/index.aspx?lang=en-us).  
+
 ## References
 
 - nvidia videos [link1](https://www.youtube.com/watch?v=r3LrCnou1K4) [link2](https://youtu.be/iAavYF-XqTA) [link3](https://youtu.be/uM3Ii79KQ20)
