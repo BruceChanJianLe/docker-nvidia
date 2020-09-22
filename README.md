@@ -70,7 +70,17 @@ sudo apt-get install -y nvidia-docker2
 sudo systemctl restart docker
 ```
 
+For more detail installation steps please refer to this [page](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).  
 
+## Pre-Requisites Installation
+
+**Nvidia Driver**  
+
+Installing the latest Nvidia driver and cuda is quite important, therefore, I would like to take some time to point our to some useful resources.  
+
+Starting from Ubuntu16 you will be able to install Nvidia drivers through `Software & Update` software on your Ubuntu. However, they may cause issue like greying out some options. Please follow this two links to remove and reinstalled your driver.  
+- [link1](https://ubuntuforums.org/showthread.php?t=2413765)
+- [link2](https://ubuntuforums.org/showthread.php?t=2397701&highlight=continue+manually+installed+driver)
 
 ## References
 
