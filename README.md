@@ -35,6 +35,13 @@ The `nvidia-docker2` package dependencies can be seen below:
 
 For more information, please visit the official [page](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/arch-overview.html#arch-overview).
 
+## Pre-Requisites
+
+1.GNU/Linux x86_64 with kernel version > `3.10  `
+1.Docker >= `19.03` (recommended, but some distributions may include older versions of Docker. The minimum supported version is 1.12)  
+1.NVIDIA GPU with Architecture > `Fermi` (or compute capability 2.1)  
+1.NVIDIA drivers ~= `361.93` (untested on older versions)  
+
 ## Installation
 
 The installation steps are tested and verified on the Ubuntu18.04.  
