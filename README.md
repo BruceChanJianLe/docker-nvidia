@@ -94,6 +94,7 @@ docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 # |  No running processes found                                                 |
 # +-----------------------------------------------------------------------------+
 ```
+
 For more detail installation steps please refer to this [page](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html).  
 
 ## Pre-Requisites Installation
